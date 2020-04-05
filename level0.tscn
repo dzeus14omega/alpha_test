@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://actor/Hunter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actor/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://map_for_werewolf.tmx" type="PackedScene" id=3]
+[ext_resource path="res://actor/controller/dialogue_controller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters.gd" type="Script" id=5]
+
+[node name="level0" type="Node2D"]
+position = Vector2( 8, 0 )
+
+[node name="map_for_werewolf" parent="." instance=ExtResource( 3 )]
+position = Vector2( -9, 32 )
+
+[node name="characters" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="dialogue_controller" parent="characters" instance=ExtResource( 4 )]
+
+[node name="Hunter" parent="characters" instance=ExtResource( 1 )]
+position = Vector2( 814, 481 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+[connection signal="body_entered" from="characters/Hunter" to="characters/Hunter" method="_on_hunter_body_entered"]
+[connection signal="body_exited" from="characters/Hunter" to="characters/Hunter" method="_on_hunter_body_exited"]

@@ -1,0 +1,37 @@
+{
+    "1": {
+        "id": 1,
+        "dialog": "Seriously!,... Iam not a wolf",
+        "enu": "normal"
+    },
+    "2": {
+        "id": 2,
+        "dialog": "To be honest, Iam a tough guy",
+        "enu": "normal"
+    },
+    "3": {
+        "id": 3,
+        "dialog": "I just a normal person and don't have any special ability",
+        "enu": "normal"
+    },
+    "4": {
+        "id": 4,
+        "dialog": "You know, i think wolfs are going to be extinct, haha!",
+        "enu": "normal"
+    },
+    "5": {
+        "id": 5,
+        "dialog": "Okay! If you don't believe me, I will shoot you! I have gun!",
+        "enu": "warn"
+    },
+    "6": {
+        "id": 6,
+        "dialog": "Iam hunter,... real hunter!",
+        "enu": "show"
+    },
+    "7": {
+        "id": 7,
+        "dialog": "I don't know who among us is actually a wolf,",
+        "enu": "show"
+    }
+}

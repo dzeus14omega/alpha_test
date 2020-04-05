@@ -1,0 +1,37 @@
+{
+    "1": {
+	"role": "hunter",
+        "dialog": "Seriously!,... Iam not a wolf",
+        "enu": "norm"
+    },
+    "2": {
+	"role": "hunter",
+        "dialog": "To be honest, Iam a tough guy",
+        "enu": "norm"
+    },
+    "3": {
+	"role": "hunter",
+        "dialog": "I just a normal person and don't have any special ability",
+        "enu": "norm"
+    },
+    "4": {
+	"role": "hunter",
+        "dialog": "You know, i think wolfs are going to be extinct, haha!",
+        "enu": "norm"
+    },
+    "5": {
+	"role": "hunter",
+        "dialog": "Okay! If you don't believe me, I will shoot you! I have gun!",
+        "enu": "warn"
+    },
+    "6": {
+	"role": "hunter",
+        "dialog": "Iam hunter,... real hunter!",
+        "enu": "quick_action"
+    },
+    "7": {
+	"role": "hunter",
+        "dialog": "I don't know who among us is actually a wolf",
+        "enu": "quick_action"
+    }
+}
