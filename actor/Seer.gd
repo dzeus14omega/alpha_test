@@ -1,5 +1,6 @@
 extends Actor
-class_name Hunter
+class_name Seer
+
 
 var current_dialogues : Array
 
@@ -14,8 +15,8 @@ func _process(delta):
 	$AnimatedSprite.play("idle")
 	pass
 
-# warning-ignore:unused_argument
-func _on_hunter_body_entered(body):
+
+func _on_Seer_body_entered(body):
 	if self.position.x - body.position.x < 0:
 		$AnimatedSprite.flip_h = true
 		#$AnimatedSprite.flip_h = false
@@ -23,8 +24,8 @@ func _on_hunter_body_entered(body):
 	self.get_node("Control").visible = true
 	#$CollisionShape2D.set_deferred("disabled", true)
 
-# warning-ignore:unused_argument
-func _on_hunter_body_exited(body):
+
+func _on_Seer_body_exited(body):
 	$AnimatedSprite.flip_h = false
 	self.get_node("Control").visible = false
 	pass # Replace with function body.
@@ -46,3 +47,11 @@ func cast_ability():
 	#code...
 	self.ability = true
 	pass
+
+
+
+
+
+
+
+

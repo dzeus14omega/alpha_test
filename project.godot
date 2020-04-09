@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actor/Actor.gd"
 }, {
+"base": "Actor",
+"class": "Bodyguard",
+"language": "GDScript",
+"path": "res://actor/Bodyguard.gd"
+}, {
+"base": "Node2D",
+"class": "Characters",
+"language": "GDScript",
+"path": "res://characters.gd"
+}, {
 "base": "Control",
 "class": "Dialogue_manager",
 "language": "GDScript",
@@ -33,13 +43,27 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://actor/Player.gd"
+}, {
+"base": "Actor",
+"class": "Seer",
+"language": "GDScript",
+"path": "res://actor/Seer.gd"
+}, {
+"base": "Actor",
+"class": "Witch",
+"language": "GDScript",
+"path": "res://actor/Witch.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
+"Bodyguard": "",
+"Characters": "",
 "Dialogue_manager": "",
 "Hunter": "",
 "Joystick": "",
-"Player": ""
+"Player": "",
+"Seer": "",
+"Witch": ""
 }
 
 [application]
@@ -65,6 +89,8 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"
 
 [tiled_importer]

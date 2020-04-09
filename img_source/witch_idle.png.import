@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/joy_stick_button_press.png-a2bb7e44b36438ab4e391a4722447859.stex"
+path="res://.import/witch_idle.png-a5e431538852ecf824976e60b1958235.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img_source/joy_stick_button_press.png"
-dest_files=[ "res://.import/joy_stick_button_press.png-a2bb7e44b36438ab4e391a4722447859.stex" ]
+source_file="res://img_source/witch_idle.png"
+dest_files=[ "res://.import/witch_idle.png-a5e431538852ecf824976e60b1958235.stex" ]
 
 [params]
 

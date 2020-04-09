@@ -1,37 +1,312 @@
 {
     "1": {
-	"role": "hunter",
+        "role": "Hunter",
         "dialog": "Seriously!,... Iam not a wolf",
         "enu": "norm"
     },
     "2": {
-	"role": "hunter",
+        "role": "Hunter",
         "dialog": "To be honest, Iam a tough guy",
         "enu": "norm"
     },
     "3": {
-	"role": "hunter",
+        "role": "Hunter",
         "dialog": "I just a normal person and don't have any special ability",
         "enu": "norm"
     },
     "4": {
-	"role": "hunter",
+        "role": "Hunter",
         "dialog": "You know, i think wolfs are going to be extinct, haha!",
         "enu": "norm"
     },
     "5": {
-	"role": "hunter",
+        "role": "Hunter",
         "dialog": "Okay! If you don't believe me, I will shoot you! I have gun!",
         "enu": "warn"
     },
     "6": {
-	"role": "hunter",
-        "dialog": "Iam hunter,... real hunter!",
+        "role": "Hunter",
+        "dialog": "Iam Hunter,... real Hunter!",
         "enu": "quick_action"
     },
     "7": {
-	"role": "hunter",
+        "role": "Hunter",
         "dialog": "I don't know who among us is actually a wolf",
         "enu": "quick_action"
+    },
+    "8": {
+        "role": "Hunter",
+        "dialog": "There is no need to be afraid",
+        "enu": "warn"
+    },
+    "9": {
+        "role": "Hunter",
+        "dialog": "My weapon will punish all evil creatures ",
+        "enu": "quick_action"
+    },
+    "10": {
+        "role": "Hunter",
+        "dialog": "One bullet is all it takes",
+        "enu": "norm"
+    },
+    "11": {
+        "role": "Hunter",
+        "dialog": "werewolf or not, it wont stand a chance!",
+        "enu": "norm"
+    },
+    "12": {
+        "role": "Hunter",
+        "dialog": "Dont make me! ",
+        "enu": "quick_action"
+    },
+    "13": {
+        "role": "Seer",
+        "dialog": "Dont worry, i can see through time",
+        "enu": "norm"
+    },
+    "14": {
+        "role": "Seer",
+        "dialog": "I've just been in this place before",
+        "enu": "norm"
+    },
+    "15": {
+        "role": "Seer",
+        "dialog": "Be ready, It will come, Soon... ",
+        "enu": "norm"
+    },
+    "16": {
+        "role": "Seer",
+        "dialog": "I wish i can tell you what happen next",
+        "enu": "norm"
+    },
+    "17": {
+        "role": "Seer",
+        "dialog": "Past, Present, Future, To me is all the same",
+        "enu": "norm"
+    },
+    "18": {
+        "role": "Seer",
+        "dialog": "Pray, Cause you will need it tonight. ",
+        "enu": "norm"
+    },
+    "19": {
+        "role": "Seer",
+        "dialog": "May the Father of Understanding guide you!",
+        "enu": "norm"
+    },
+    "20": {
+        "role": "Seer",
+        "dialog": "This is not what I've seen, or ...",
+        "enu": "warn"
+    },
+    "21": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "22": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "23": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "24": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "25": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "26": {
+        "role": "Witch",
+        "dialog": "My poison can kill everything",
+        "enu": "norm"
+    },
+    "27": {
+        "role": "Witch",
+        "dialog": "These bottles contain more than just water",
+        "enu": "norm"
+    },
+    "28": {
+        "role": "Witch",
+        "dialog": "How about a little toxin? ",
+        "enu": "norm"
+    },
+    "29": {
+        "role": "Witch",
+        "dialog": "Pick me, and you will dead by sunrise",
+        "enu": "norm"
+    },
+    "30": {
+        "role": "Witch",
+        "dialog": "Just one drop from my vial, even darmacus will melt",
+        "enu": "norm"
+    },
+    "31": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "32": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "33": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "34": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "35": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "36": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "37": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "38": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "39": {
+        "role": "Witch",
+        "dialog": "",
+        "enu": ""
+    },
+    "40": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "41": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "42": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "43": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "44": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "45": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "46": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "47": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "48": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "49": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "50": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "51": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "52": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "53": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "54": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "55": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "56": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "57": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "58": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "59": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "60": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "61": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
+    },
+    "62": {
+        "role": "",
+        "dialog": "",
+        "enu": ""
     }
 }

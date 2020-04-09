@@ -18,7 +18,6 @@ func _ready():
 		json_form = parse_json(file.get_as_text())
 		file.close()
 		dialogues = json_form.values()
-		#print(dialogues.size())
 	pass# Replace with function body.
 
 func setup_norm_dialogue(key) -> Array:

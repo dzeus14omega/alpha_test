@@ -1,16 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://actor/Hunter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actor/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://map_for_werewolf.tmx" type="PackedScene" id=3]
+[ext_resource path="res://map_and_object/Map.tscn" type="PackedScene" id=3]
 [ext_resource path="res://actor/controller/dialogue_controller.tscn" type="PackedScene" id=4]
 [ext_resource path="res://characters.gd" type="Script" id=5]
+[ext_resource path="res://actor/Seer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://actor/Witch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://actor/Bodyguard.tscn" type="PackedScene" id=8]
 
 [node name="level0" type="Node2D"]
 position = Vector2( 8, 0 )
 
-[node name="map_for_werewolf" parent="." instance=ExtResource( 3 )]
-position = Vector2( -9, 32 )
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -4, 4 )
 
 [node name="characters" type="Node2D" parent="."]
 script = ExtResource( 5 )
@@ -18,8 +21,24 @@ script = ExtResource( 5 )
 [node name="dialogue_controller" parent="characters" instance=ExtResource( 4 )]
 
 [node name="Hunter" parent="characters" instance=ExtResource( 1 )]
-position = Vector2( 814, 481 )
+position = Vector2( -272, 262 )
+
+[node name="Seer" parent="characters" instance=ExtResource( 6 )]
+position = Vector2( -298, 141 )
+
+[node name="Witch" parent="characters" instance=ExtResource( 7 )]
+position = Vector2( 73, 199 )
+
+[node name="Bodyguard" parent="characters" instance=ExtResource( 8 )]
+position = Vector2( -11, 269 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -409, 150 )
 [connection signal="body_entered" from="characters/Hunter" to="characters/Hunter" method="_on_hunter_body_entered"]
 [connection signal="body_exited" from="characters/Hunter" to="characters/Hunter" method="_on_hunter_body_exited"]
+[connection signal="body_entered" from="characters/Seer" to="characters/Seer" method="_on_Seer_body_entered"]
+[connection signal="body_exited" from="characters/Seer" to="characters/Seer" method="_on_Seer_body_exited"]
+[connection signal="body_entered" from="characters/Witch" to="characters/Witch" method="_on_Witch_body_entered"]
+[connection signal="body_exited" from="characters/Witch" to="characters/Witch" method="_on_Witch_body_exited"]
+[connection signal="body_entered" from="characters/Bodyguard" to="characters/Bodyguard" method="_on_Bodyguard_body_entered"]
+[connection signal="body_exited" from="characters/Bodyguard" to="characters/Bodyguard" method="_on_Bodyguard_body_exited"]

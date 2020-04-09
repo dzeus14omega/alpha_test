@@ -1,41 +1,40 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://img_source/hunter_idle.png" type="Texture" id=1]
-[ext_resource path="res://actor/Hunter.gd" type="Script" id=2]
+[ext_resource path="res://img_source/bodyguard_idle.png" type="Texture" id=1]
+[ext_resource path="res://actor/Bodyguard.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 45, 48 )
+extents = Vector2( 42, 44 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 76 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 64, 64 )
+region = Rect2( 64, 0, 64, 76 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 76 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 192, 0, 64, 64 )
+region = Rect2( 192, 0, 64, 76 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 7.0
 } ]
 
-[node name="hunter" type="Area2D"]
-position = Vector2( 491, 315 )
+[node name="Bodyguard" type="Area2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -44,39 +43,30 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 6 )
+animation = "idle"
+frame = 3
+
 [node name="Control" type="Control" parent="."]
 visible = false
-margin_left = -59.0
-margin_top = -129.0
-margin_right = 71.0
-margin_bottom = -47.0
+margin_left = -65.0
+margin_top = -136.0
+margin_right = 65.0
+margin_bottom = -53.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 margin_right = 130.0
-margin_bottom = 82.0
+margin_bottom = 80.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-anchor_left = 0.0461538
-anchor_top = 0.0853659
-anchor_right = 0.946154
-anchor_bottom = 0.951219
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "haloo
-"
-text = "haloo
-"
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 6 )
-animation = "idle"
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 125.0
+margin_bottom = 74.0
