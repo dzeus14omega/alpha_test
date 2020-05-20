@@ -8,25 +8,26 @@ var speed = 150
 onready var joystick_move := $UI/JoystickMove
 # Called when the node enters the scene tree for the first time.
 
-
-
 func _ready():
-	$AnimatedSprite.play("idle")
+	#$anim.play("idle")
 	pass # Replace with function body.
 
+func update():
+	$UI/Vote_action/Panel/ScrollContainer/VBoxContainer.update_list()
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # warning-ignore:unused_argument
 func _process(delta):
 	_move(delta)
 	if joystick_move.output.x < 0:
-		$AnimatedSprite.play("move_left")
-		$AnimatedSprite.flip_h = false
+		$anim.play("move_left")
+		$anim.flip_h = false
 	if joystick_move.output.x > 0:
-		$AnimatedSprite.play("move_left")
-		$AnimatedSprite.flip_h = true
+		$anim.play("move_left")
+		$anim.flip_h = true
 	if joystick_move.output == Vector2(0,0):
-		$AnimatedSprite.play("idle")
+		$anim.play("idle")
 	pass
 
 func _move(delta: float) -> void:
@@ -34,3 +35,15 @@ func _move(delta: float) -> void:
 		move_and_slide(joystick_move.output * speed)
 
 
+
+func _on_Confirm_button_pressed():
+	var list_button = get_node("UI/Vote_action/Panel/ScrollContainer/VBoxContainer").get_children()
+	var target_character
+	for x in list_button:
+		if x.pressed:
+			target_character = x.name
+			#print(x.name)
+			break
+	get_parent().vote_activate(target_character)
+
+	pass # Replace with function body.

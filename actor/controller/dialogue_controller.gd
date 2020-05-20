@@ -21,36 +21,33 @@ func _ready():
 	pass# Replace with function body.
 
 func setup_norm_dialogue(key) -> Array:
-	var tmp : Array
+	var tmp : Array = []
 	for x in dialogues:
 		if x.role == key:
 			if x.enu == "norm":
 				tmp.push_back(x.dialog)
 			pass
 		pass
-	pass
 	return tmp
 
 func quick_action_dialogue(key : String) -> Array:
-	var tmp : Array
+	var tmp : Array = []
 	for x in dialogues:
 		if x.role == key:
 			if x.enu == "quick-action":
 				tmp.push_back(x.dialog)
 			pass
 		pass
-	pass
 	return tmp
 
 func warning_dialogue(key : String) -> Array:
-	var tmp : Array
+	var tmp : Array= []
 	for x in dialogues:
 		if x.role == key:
 			if x.enu == "warn":
 				tmp.push_back(x.dialog)
 			pass
 		pass
-	pass
 	return tmp
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

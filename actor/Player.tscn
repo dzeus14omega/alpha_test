@@ -1,84 +1,119 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://img_source/player_idle.png" type="Texture" id=1]
 [ext_resource path="res://actor/Player.gd" type="Script" id=2]
 [ext_resource path="res://actor/controller/Joystick.tscn" type="PackedScene" id=3]
 [ext_resource path="res://img_source/player_walk.png" type="Texture" id=4]
+[ext_resource path="res://actor/controller/Vote.gd" type="Script" id=5]
+[ext_resource path="res://actor/controller/VBox_list_vote.gd" type="Script" id=7]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 16.0
-height = 24.0
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 74, 80 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 74, 80 )
+region = Rect2( 74, 0, 74, 80 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 74, 0, 74, 80 )
+region = Rect2( 148, 0, 74, 80 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 148, 0, 74, 80 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 1 )
 region = Rect2( 222, 0, 74, 80 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 74, 80 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 74, 0, 74, 80 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 148, 0, 74, 80 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 222, 0, 74, 80 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "move_left",
 "speed": 8.0
 } ]
 
+[sub_resource type="Animation" id=10]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 880, 144 ), Vector2( 640, 144 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 640, 144 ), Vector2( 880, 144 ) ]
+}
+
+[sub_resource type="Theme" id=12]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 16, 16.0001 )
+
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 479, 269 )
+collision_layer = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="anim" type="AnimatedSprite" parent="."]
 position = Vector2( 4, -7 )
-frames = SubResource( 10 )
+frames = SubResource( 9 )
 animation = "move_left"
 frame = 3
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+root_node = NodePath("../Vote_action")
+anims/slide_in = SubResource( 10 )
+anims/slide_out = SubResource( 11 )
 
 [node name="JoystickMove" parent="UI" instance=ExtResource( 3 )]
 margin_top = 267.0
@@ -86,5 +121,81 @@ margin_right = -625.0
 margin_bottom = 67.0
 rect_scale = Vector2( 0.8, 0.8 )
 
+[node name="Vote_action" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 880.0
+margin_top = 144.0
+margin_right = 256.0
+margin_bottom = -4.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="UI/Vote_action"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -320.0
+margin_top = -16.0
+margin_right = -261.0
+margin_bottom = 47.0
+rect_rotation = -90.0
+rect_scale = Vector2( 2.05456, 1.04 )
+text = "vote"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="UI/Vote_action"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -256.16
+margin_top = -392.0
+margin_right = -1.15961
+theme = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Vote_action/Panel"]
+margin_left = 7.0
+margin_top = 8.0
+margin_right = 224.0
+margin_bottom = 336.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Vote_action/Panel/ScrollContainer"]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm_button" type="Button" parent="UI/Vote_action/Panel"]
+margin_left = 14.0
+margin_top = 344.0
+margin_right = 214.0
+margin_bottom = 376.0
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 24 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 13 )
+[connection signal="pressed" from="UI/Vote_action/Button" to="UI/Vote_action" method="_on_Button_pressed"]
+[connection signal="pressed" from="UI/Vote_action/Panel/Confirm_button" to="." method="_on_Confirm_button_pressed"]

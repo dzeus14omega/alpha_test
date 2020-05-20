@@ -8,9 +8,6 @@ var is_working := false
 # The joystick output.
 var output := Vector2.ZERO
 
-# FIXED: The joystick doesn't move.
-# DYNAMIC: Every time the joystick area is pressed, the joystick position is set on the touched position.
-# FOLLOWING: If the finger moves outside the joystick background, the joystick follows it.
 enum Joystick_mode {FIXED, DYNAMIC, FOLLOWING}
 
 export(Joystick_mode) var joystick_mode := Joystick_mode.FIXED
@@ -41,25 +38,31 @@ onready var _handle := $Background/Handle
 onready var _original_color : Color = _handle.modulate
 onready var _original_position : Vector2 = _background.rect_position
 
-func _gui_input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch and (joystick_mode == Joystick_mode.DYNAMIC or joystick_mode == Joystick_mode.FOLLOWING):
-		if event.is_pressed():
-			var new_pos = event.position - _background.rect_size / 2
-			_background.rect_position = new_pos
-		else:
-			_background.rect_position = _original_position
+#func _process(delta):
+#	print(get_global_mouse_position())
+#
+#func _gui_input(event: InputEvent) -> void:
+#	if event is InputEventScreenTouch and (joystick_mode == Joystick_mode.DYNAMIC or joystick_mode == Joystick_mode.FOLLOWING): # and abs(event.positon.x - self.position.x):
+#		if event.is_pressed():
+#			var new_pos = event.position - _background.rect_size / 2
+#			_background.rect_position = new_pos
+#		else:
+#			_background.rect_position = _original_position
 
 func _on_Background_gui_input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch:
-		if event.pressed:
+	if event is InputEventScreenTouch :
+		#print(event.position - Vector2(125,125))
+		if event.pressed and event.position.x - 125 <=400:
 			_handle.modulate = _pressed_color
 		else:
+			#day roi
 			is_working = false
 			output = Vector2.ZERO
 			_set_handle_center_position(_background.rect_size / 2)
 			_handle.modulate = _original_color
 	
-	if event is InputEventScreenDrag:
+	if event is InputEventScreenDrag and event.position.x - 125 <=400:
+		#print(event.position)
 		var vector : Vector2 = event.position - _background.rect_size / 2
 		var dead_size = dead_zone * _background.rect_size.x / 2
 		if vector.length() < dead_size:

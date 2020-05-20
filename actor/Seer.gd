@@ -12,23 +12,44 @@ func _ready():
 
 # warning-ignore:unused_argument
 func _process(delta):
-	$AnimatedSprite.play("idle")
-	pass
+	if(self.position != next_pos):
+		var old_pos = self.position
+		var walk_distance = character_speed * delta
+		#set moving animation
+		if(next_pos.x < old_pos.x):
+			$AnimatedSprite.play("walk")
+			$AnimatedSprite.flip_h = false
+		if(next_pos.x > old_pos.x):
+			$AnimatedSprite.play("walk")
+			$AnimatedSprite.flip_h = true
+		#may cause an exception!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! null instance
+		var path = get_parent().get_parent().get_parent().get_node("Map")._update_navigation_path(self.position, next_pos)
+		move_along_path(walk_distance, path)
+		if(self.position == old_pos):
+			next_pos = self.position
+			return
+	else:
+		$AnimatedSprite.play("idle")
 
 
 func _on_Seer_body_entered(body):
-	if self.position.x - body.position.x < 0:
-		$AnimatedSprite.flip_h = true
-		#$AnimatedSprite.flip_h = false
-	self.get_node("Control/RichTextLabel").set_bbcode(update_dialogue())
-	self.get_node("Control").visible = true
+	if body is Player:
+		if self.position.x - body.position.x < 0:
+			$AnimatedSprite.flip_h = true
+			#$AnimatedSprite.flip_h = false
+		self.get_node("Control/RichTextLabel").set_bbcode(update_dialogue())
+		self.get_node("Control").visible = true
 	#$CollisionShape2D.set_deferred("disabled", true)
 
 
 func _on_Seer_body_exited(body):
-	$AnimatedSprite.flip_h = false
-	self.get_node("Control").visible = false
-	pass # Replace with function body.
+	if body is Player:
+		$AnimatedSprite.flip_h = false
+		self.get_node("Control").visible = false
+	if body is Knight:
+		if GLOBAL.check_arrest_order() == self.name:
+			#print(GLOBAL.check_arrest_order() + " " + self.name)
+			move_to(GLOBAL.prison_pos)
 
 #update dialog to change in bbcode
 func update_dialogue()-> String:
@@ -45,13 +66,7 @@ func dilivery_dialog(new_dialog : Array):
 
 func cast_ability():
 	#code...
-	self.ability = true
+	#self.ability = true
+	print("Seer cast ability")
 	pass
-
-
-
-
-
-
-
 

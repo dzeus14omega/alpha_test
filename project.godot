@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area2D",
+"base": "KinematicBody2D",
 "class": "Actor",
 "language": "GDScript",
 "path": "res://actor/Actor.gd"
@@ -22,12 +22,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Characters",
 "language": "GDScript",
-"path": "res://characters.gd"
+"path": "res://scenes/characters.gd"
 }, {
 "base": "Control",
 "class": "Dialogue_manager",
 "language": "GDScript",
 "path": "res://actor/controller/dialogue_controller.gd"
+}, {
+"base": "YSort",
+"class": "Game_controller",
+"language": "GDScript",
+"path": "res://scenes/Event_controller.gd"
 }, {
 "base": "Actor",
 "class": "Hunter",
@@ -39,6 +44,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actor/controller/Joystick.gd"
 }, {
+"base": "Actor",
+"class": "Knight",
+"language": "GDScript",
+"path": "res://actor/Knight.gd"
+}, {
+"base": "Navigation2D",
+"class": "Map_navigate",
+"language": "GDScript",
+"path": "res://actor/temple_guard.gd"
+}, {
+"base": "Navigation2D",
+"class": "Map_navigation",
+"language": "GDScript",
+"path": "res://map_and_object/Map.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -48,6 +68,11 @@ _global_script_classes=[ {
 "class": "Seer",
 "language": "GDScript",
 "path": "res://actor/Seer.gd"
+}, {
+"base": "VBoxContainer",
+"class": "Vote_list",
+"language": "GDScript",
+"path": "res://actor/controller/VBox_list_vote.gd"
 }, {
 "base": "Actor",
 "class": "Witch",
@@ -59,18 +84,27 @@ _global_script_class_icons={
 "Bodyguard": "",
 "Characters": "",
 "Dialogue_manager": "",
+"Game_controller": "",
 "Hunter": "",
 "Joystick": "",
+"Knight": "",
+"Map_navigate": "",
+"Map_navigation": "",
 "Player": "",
 "Seer": "",
+"Vote_list": "",
 "Witch": ""
 }
 
 [application]
 
 config/name="Alpha_test"
-run/main_scene="res://level0.tscn"
+run/main_scene="res://scenes/main_scene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GLOBAL="*res://Root_scene.gd"
 
 [display]
 
@@ -81,18 +115,20 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "vnen.tiled_importer" )
+enabled=PoolStringArray(  )
 
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_render/layer_1="walls"
+2d_render/layer_2="player"
+2d_render/layer_3="enemy"
 
 [rendering]
 
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"
-
-[tiled_importer]
-
-enable_json_format=false

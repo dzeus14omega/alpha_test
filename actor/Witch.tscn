@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://actor/Witch.gd" type="Script" id=1]
 [ext_resource path="res://img_source/witch_idle.png" type="Texture" id=2]
+[ext_resource path="res://img_source/witch_walk.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 43 )
+extents = Vector2( 16, 24 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -26,27 +27,58 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 222, 0, 74, 75 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 74, 75 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 74, 0, 74, 75 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 148, 0, 74, 75 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 222, 0, 74, 75 )
+
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 7.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
 } ]
 
-[node name="witch" type="Area2D"]
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 64, 16 )
+
+[node name="Witch" type="KinematicBody2D"]
+collision_layer = 4
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="body_collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 6 )
+position = Vector2( 0, -16 )
+frames = SubResource( 10 )
 animation = "idle"
 frame = 1
+playing = true
 
 [node name="Control" type="Control" parent="."]
 visible = false
@@ -76,3 +108,10 @@ text = "das"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 11 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Witch_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Witch_body_exited"]
