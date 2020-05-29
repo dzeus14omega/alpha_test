@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Container" parent="."]
+margin_left = 688.0
+margin_top = 88.0
+margin_right = 944.0
+margin_bottom = 472.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolButton" type="ToolButton" parent="Container"]
+margin_right = 12.0
+margin_bottom = 22.0
+text = "new game"

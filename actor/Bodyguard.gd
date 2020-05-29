@@ -11,16 +11,17 @@ func _ready():
 
 # warning-ignore:unused_argument
 func _process(delta):
+	#set moving animation
+	if(next_pos.x < self.position.x):
+			$AnimatedSprite.play("walk")
+			$AnimatedSprite.flip_h = false
+	if(next_pos.x > self.position.x):
+		$AnimatedSprite.play("walk")
+		$AnimatedSprite.flip_h = true
+	
 	if(self.position != next_pos):
 		var old_pos = self.position
 		var walk_distance = character_speed * delta
-		#set moving animation
-		if(next_pos.x < old_pos.x):
-			$AnimatedSprite.play("walk")
-			$AnimatedSprite.flip_h = false
-		if(next_pos.x > old_pos.x):
-			$AnimatedSprite.play("walk")
-			$AnimatedSprite.flip_h = true
 		#may cause an exception!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! null instance
 		var path = get_parent().get_parent().get_parent().get_node("Map")._update_navigation_path(self.position, next_pos)
 		move_along_path(walk_distance, path)

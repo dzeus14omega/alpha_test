@@ -41,7 +41,7 @@ position = Vector2( 256, -200 )
 position = Vector2( 504, -344 )
 
 [node name="house5" parent="Game_controller/House" instance=ExtResource( 7 )]
-position = Vector2( -672, -128 )
+position = Vector2( -664, -208 )
 
 [node name="house6" parent="Game_controller/House" instance=ExtResource( 7 )]
 position = Vector2( -16, 240 )
@@ -59,7 +59,7 @@ position = Vector2( 312, -128 )
 position = Vector2( -176, -152 )
 
 [node name="Seer" parent="Game_controller/Characters" instance=ExtResource( 10 )]
-position = Vector2( 456, -288 )
+position = Vector2( -40, -120 )
 
 [node name="Witch" parent="Game_controller/Characters" instance=ExtResource( 11 )]
 position = Vector2( -320, -248 )

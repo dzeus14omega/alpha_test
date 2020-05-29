@@ -11,10 +11,10 @@ var arrest_order : String = ""
 
 func check_arrest_order():
 	var tmp = arrest_order
-	arrest_order = ""
 	return tmp
 
 func set_arrest_order(character_name : String):
+	print(character_name)
 	self.arrest_order = character_name
 
 func _ready():

@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Event_controller.gd"
 }, {
+"base": "StaticBody2D",
+"class": "House",
+"language": "GDScript",
+"path": "res://map_and_object/house_style1.gd"
+}, {
 "base": "Actor",
 "class": "Hunter",
 "language": "GDScript",
@@ -85,6 +90,7 @@ _global_script_class_icons={
 "Characters": "",
 "Dialogue_manager": "",
 "Game_controller": "",
+"House": "",
 "Hunter": "",
 "Joystick": "",
 "Knight": "",

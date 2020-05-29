@@ -47,8 +47,9 @@ func _on_Seer_body_exited(body):
 		$AnimatedSprite.flip_h = false
 		self.get_node("Control").visible = false
 	if body is Knight:
+		print(GLOBAL.check_arrest_order() + " " + self.name)
 		if GLOBAL.check_arrest_order() == self.name:
-			#print(GLOBAL.check_arrest_order() + " " + self.name)
+			
 			move_to(GLOBAL.prison_pos)
 
 #update dialog to change in bbcode

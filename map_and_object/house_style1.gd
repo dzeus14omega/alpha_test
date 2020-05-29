@@ -1,5 +1,5 @@
 extends StaticBody2D
-
+class_name House
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,3 +17,15 @@ func _ready():
 
 
 
+
+
+func _on_inside_body_entered(body):
+	if body is Player:
+		$house_01.visible = false
+	pass # Replace with function body.
+
+
+func _on_inside_body_exited(body):
+	if body is Player:
+		$house_01.visible = true
+	pass # Replace with function body.

@@ -92,8 +92,9 @@ tracks/0/keys = {
 
 [sub_resource type="Theme" id=12]
 
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 16, 16.0001 )
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 15.9999
+height = 44.0
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
