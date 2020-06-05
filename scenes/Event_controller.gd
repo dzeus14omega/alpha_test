@@ -6,6 +6,7 @@ class_name Game_controller
 # var b = "text"
 var _statement_event
 var dead_list : Array
+var day_num
 
 enum state {
 	morning,
@@ -15,6 +16,7 @@ enum state {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	day_num = 1
 	dead_list = []
 	_statement_event = state.day
 	pass # Replace with function body.
@@ -44,6 +46,8 @@ func vote_activate(name_character : String):
 
 func end_event_day():
 	if _statement_event == state.day:
+		day_num += 1
+		GLOBAL.day_num = self.day_num
 		_change_state()
 		get_parent().get_node("splash_scene_endday").end_day_active()
 		night_event_process()

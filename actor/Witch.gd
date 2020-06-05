@@ -4,6 +4,7 @@ class_name Witch
 var current_dialogues : Array
 
 func _ready():
+
 	pass
 
 ###------------------ Show dialog-----------------###

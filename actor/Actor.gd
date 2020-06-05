@@ -6,17 +6,17 @@ var role : String
 export var spawn_location : Vector2 setget set_spawn_location, get_spawn_location
 var character_speed
 var next_pos : Vector2
-var _timer
+
 #-------------------------------------------------------------------------------
 func _ready():
 	role = "humman"
-	character_speed = 200
-	next_pos = self.position
-#	_timer = Timer.new()
-#	_timer.wait_time = 3
-#	_timer.connect("timeout",self,"_on_timer_timeout") 
-#	add_child(_timer) #to process
-#	_timer.start()
+	character_speed = 150
+	next_pos = spawn_location
+	position = spawn_location
+
+func reset_to_spawn_pos():
+	self.position = spawn_location
+	next_pos = spawn_location
 
 func set_spawn_location(a: Vector2):
 	spawn_location = a
@@ -37,17 +37,6 @@ func is_human():
 
 func move_to(pos : Vector2):
 	next_pos = pos
-
-func rand_move():
-	randomize()
-	var x = (randi()%1000) - 500
-	var y = (randi()%1000) - 500
-	move_to(Vector2(x,y))
-	pass
-
-func _on_timer_timeout():
-	rand_move()
-
 
 func move_along_path(distance, path):
 	var last_point = self.position

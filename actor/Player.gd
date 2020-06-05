@@ -45,5 +45,5 @@ func _on_Confirm_button_pressed():
 			#print(x.name)
 			break
 	get_parent().vote_activate(target_character)
-
+	$UI/Vote_action._on_Button_pressed()
 	pass # Replace with function body.

@@ -19,6 +19,7 @@ func _ready():
 	._ready()
 	#next_pos = Vector2(-128,-128)\
 	timer.set_wait_time(2)
+	print(self.name)
 	pass
 
 

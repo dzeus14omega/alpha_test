@@ -53,16 +53,20 @@ position = Vector2( 328, -576 )
 script = ExtResource( 2 )
 
 [node name="Bodyguard" parent="Game_controller/Characters" instance=ExtResource( 8 )]
-position = Vector2( 312, -128 )
+position = Vector2( 280, -216 )
+spawn_location = Vector2( 280, -216 )
 
 [node name="Hunter" parent="Game_controller/Characters" instance=ExtResource( 4 )]
-position = Vector2( -176, -152 )
+position = Vector2( 96, -216 )
+spawn_location = Vector2( 96, -216 )
 
 [node name="Seer" parent="Game_controller/Characters" instance=ExtResource( 10 )]
-position = Vector2( -40, -120 )
+position = Vector2( 536, -376 )
+spawn_location = Vector2( 536, -376 )
 
 [node name="Witch" parent="Game_controller/Characters" instance=ExtResource( 11 )]
-position = Vector2( -320, -248 )
+position = Vector2( -432, -384 )
+spawn_location = Vector2( -440, -392 )
 
 [node name="Knight1" parent="Game_controller/Characters" instance=ExtResource( 5 )]
 position = Vector2( -224, -504 )
@@ -87,6 +91,6 @@ bias = Vector2( -24, -24 )
 [node name="dialogue_controller" parent="Game_controller/Characters" instance=ExtResource( 9 )]
 
 [node name="Player" parent="Game_controller" instance=ExtResource( 6 )]
-position = Vector2( -264, -80 )
+position = Vector2( 112, -136 )
 
 [node name="splash_scene_endday" parent="." instance=ExtResource( 14 )]

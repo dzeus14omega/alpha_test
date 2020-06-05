@@ -17,7 +17,7 @@ func _ready():
 
 func _on_excution_area_body_entered(body):
 	if body is Actor and !(body is Knight):
-		body.kill()
-		get_parent().get_parent().end_event_day()
-		pass
+		if GLOBAL.arrest_order == body.name:
+			body.kill()
+			get_parent().get_parent().end_event_day()
 	pass # Replace with function body.

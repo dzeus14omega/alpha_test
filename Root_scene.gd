@@ -7,7 +7,8 @@ var character_list : Array
 var total_character = 4
 var prison_pos = Vector2(-160,-640)
 var arrest_order : String = ""
-
+var dead_list : Array
+var day_num
 
 func check_arrest_order():
 	var tmp = arrest_order

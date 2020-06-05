@@ -105,5 +105,8 @@ margin_bottom = 74.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 11 )
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Bodyguard_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Bodyguard_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
