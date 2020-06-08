@@ -18,6 +18,10 @@ func _ready():
 ###------------------ Show dialog-----------------###
 #####################################################
 
+func reset_to_spawn_pos():
+	.reset_to_spawn_pos()
+	state_action = State_action.go_outside
+
 # warning-ignore:unused_argument
 func _process(delta):
 	#set auto move
@@ -100,7 +104,7 @@ func _on_Bodyguard_body_exited(body):
 func update_dialogue()-> String:
 	if (current_dialogues.size() == 0):
 		return ""
-	var i = randi() % (current_dialogues.size() - 1)
+	var i = (randi() % current_dialogues.size()) - 1
 	var result = current_dialogues[i]
 	return result
 

@@ -66,9 +66,6 @@ extents = Vector2( 56, 16 )
 [node name="Bodyguard" type="KinematicBody2D"]
 collision_layer = 4
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="body_collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -100,6 +97,12 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = 125.0
 margin_bottom = 74.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 

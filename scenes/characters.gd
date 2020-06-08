@@ -49,6 +49,7 @@ func setup_random_role():
 		for i in range(human_list.size()):
 			if i == rand_num:
 				wolf_list.push_back(human_list[i])
+				print(human_list[i].name)
 				human_list.remove(i)
 			pass
 		pass

@@ -1,22 +1,272 @@
-[gd_scene format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://font_source/menu_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://img_source/menu_image_background.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/menu_scene.gd" type="Script" id=3]
+[ext_resource path="res://font_source/normal_font.tres" type="DynamicFont" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Setting_box"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Setting:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 3.13834, 1 ),
+"update": 0,
+"values": [ Vector2( 960, 0 ), Vector2( 672, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "single_mode"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("menu_single_game:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 3.25, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32, -304 ), Vector2( 32, 0 ), Vector2( 32, -24 ), Vector2( 32, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu_main:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 3.24901, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32, -304 ), Vector2( 32, 0 ), Vector2( 32, -21 ), Vector2( 32, 0 ) ]
+}
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Container" type="Container" parent="."]
-margin_left = 688.0
-margin_top = 88.0
-margin_right = 944.0
-margin_bottom = 472.0
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.007
+margin_bottom = 0.219971
+texture = ExtResource( 2 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToolButton" type="ToolButton" parent="Container"]
-margin_right = 12.0
-margin_bottom = 22.0
-text = "new game"
+[node name="Menu_main" type="ColorRect" parent="."]
+margin_left = 32.0
+margin_right = 344.0
+margin_bottom = 304.0
+color = Color( 0.254902, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu_main"]
+margin_left = 8.0
+margin_top = 80.0
+margin_right = 304.0
+margin_bottom = 304.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New Game" type="Button" parent="Menu_main/VBoxContainer"]
+margin_right = 296.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_pressed = Color( 0.32549, 0.32549, 0.32549, 1 )
+text = "New Game"
+flat = true
+
+[node name="multi-player" type="Button" parent="Menu_main/VBoxContainer"]
+margin_top = 75.0
+margin_right = 296.0
+margin_bottom = 135.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_pressed = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Multi-player"
+flat = true
+
+[node name="setting" type="Button" parent="Menu_main/VBoxContainer"]
+margin_top = 150.0
+margin_right = 296.0
+margin_bottom = 210.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_pressed = Color( 0.435294, 0.435294, 0.435294, 1 )
+text = "Setting"
+flat = true
+
+[node name="menu_single_game" type="ColorRect" parent="."]
+margin_left = 32.0
+margin_top = -304.0
+margin_right = 344.0
+color = Color( 0.254902, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu_single_game"]
+margin_left = 8.0
+margin_top = 80.0
+margin_right = 250.0
+margin_bottom = 304.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="menu_single_game/VBoxContainer"]
+margin_right = 242.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_pressed = Color( 0.32549, 0.32549, 0.32549, 1 )
+text = "Start"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="menu_single_game/VBoxContainer"]
+margin_top = 75.0
+margin_right = 242.0
+margin_bottom = 129.0
+custom_constants/separation = 23
+
+[node name="total_character" type="Label" parent="menu_single_game/VBoxContainer/HBoxContainer"]
+margin_right = 202.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 1 )
+text = "Total_character"
+
+[node name="num_character" type="Label" parent="menu_single_game/VBoxContainer/HBoxContainer"]
+margin_left = 225.0
+margin_right = 239.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 1 )
+text = "4"
+max_lines_visible = 1
+
+[node name="back_to_mainMenu" type="Button" parent="menu_single_game/VBoxContainer"]
+margin_top = 144.0
+margin_right = 242.0
+margin_bottom = 204.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_pressed = Color( 0.435294, 0.435294, 0.435294, 1 )
+text = "Back"
+flat = true
+
+[node name="Increase" type="Button" parent="menu_single_game"]
+margin_left = 264.0
+margin_top = 160.0
+margin_right = 292.0
+margin_bottom = 180.0
+text = "in"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="decrease" type="Button" parent="menu_single_game"]
+margin_left = 264.0
+margin_top = 184.0
+margin_right = 292.0
+margin_bottom = 204.0
+text = "de"
+
+[node name="Setting" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.007
+margin_right = 287.999
+margin_bottom = 0.219971
+color = Color( 0.156863, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Setting_Background" type="ColorRect" parent="Setting"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 272.0
+margin_bottom = 520.0
+color = Color( 0.247059, 0.027451, 0.027451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound_enable" type="Label" parent="Setting/Setting_Background"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 94.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 4 )
+text = "Sound enable"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="Setting/Setting_Background"]
+margin_left = 176.0
+margin_right = 252.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volumn" type="Label" parent="Setting/Setting_Background"]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 88.0
+margin_bottom = 95.0
+custom_fonts/font = ExtResource( 4 )
+text = "Volumn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Setting/Setting_Background"]
+margin_left = 88.0
+margin_top = 72.0
+margin_right = 248.0
+margin_bottom = 96.0
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Setting/Setting_Background"]
+margin_left = 8.0
+margin_top = 128.0
+margin_right = 97.0
+margin_bottom = 159.0
+custom_fonts/font = ExtResource( 4 )
+text = "Joystick mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Setting_box = SubResource( 1 )
+anims/single_mode = SubResource( 2 )
+anims/start_menu = SubResource( 3 )
+[connection signal="pressed" from="Menu_main/VBoxContainer/New Game" to="." method="_on_New_Game_pressed"]
+[connection signal="pressed" from="Menu_main/VBoxContainer/setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="menu_single_game/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="menu_single_game/VBoxContainer/back_to_mainMenu" to="." method="_on_back_to_mainMenu_pressed"]
+[connection signal="pressed" from="menu_single_game/Increase" to="." method="_on_Increase_pressed"]
+[connection signal="pressed" from="menu_single_game/decrease" to="." method="_on_decrease_pressed"]

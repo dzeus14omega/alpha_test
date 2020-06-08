@@ -8,16 +8,16 @@ extends CanvasLayer
 func end_day_active():
 	$AnimationPlayer.clear_caches()
 	$AnimationPlayer.play("slide_down")
-
 	pass
 
-func night_end():
+func night_end(num_dead : int):
 	yield($AnimationPlayer,"animation_finished")
-	if (GLOBAL.dead_list.size() == 0):
+	if (num_dead == 0):
 		$message_newday/message.bbcode_text = "DAY " + str(GLOBAL.day_num) + "\n Good news, no body dead"
 	else:
-		$message_newday/message.bbcode_text = "DAY " + str(GLOBAL.day_num) + "\n" + str(GLOBAL.dead_list.size()) + " body dead"
+		$message_newday/message.bbcode_text = "DAY " + str(GLOBAL.day_num) + "\n" + str(num_dead) + " dead bodies =("
 	$AnimationPlayer.play("night_end")
+	get_parent().morning_event_process()
 	pass
 
 # Called when the node enters the scene tree for the first time.

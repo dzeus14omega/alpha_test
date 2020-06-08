@@ -195,14 +195,14 @@
         "enu": ""
     },
     "40": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Bodyguard",
+        "dialog": "don't know",
+        "enu": "norm"
     },
     "41": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Bodyguard",
+        "dialog": "overwatch, silence!",
+        "enu": "norm"
     },
     "42": {
         "role": "",

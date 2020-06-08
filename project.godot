@@ -29,10 +29,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actor/controller/dialogue_controller.gd"
 }, {
-"base": "YSort",
+"base": "Node2D",
 "class": "Game_controller",
 "language": "GDScript",
-"path": "res://scenes/Event_controller.gd"
+"path": "res://scenes/main_scene.gd"
 }, {
 "base": "StaticBody2D",
 "class": "House",
@@ -105,7 +105,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Alpha_test"
-run/main_scene="res://scenes/main_scene.tscn"
+run/main_scene="res://scenes/menu_scene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -136,5 +136,6 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+threads/thread_model=2
 vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"
