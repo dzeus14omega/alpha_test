@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://multiplayer_modules/Object/rock.tscn" type="PackedScene" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 44
+
+[node name="World" type="Node2D"]
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 215.347, 276.983 )
+
+[node name="1" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 311.352, 174.065 )
+
+[node name="2" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 415.713, 134.433 )
+
+[node name="3" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 534.132, 120.055 )
+
+[node name="4" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 676.082, 144.027 )
+
+[node name="5" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 776.301, 225.789 )
+
+[node name="6" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 812.682, 318.832 )
+
+[node name="7" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 713.687, 420.311 )
+
+[node name="8" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 584.593, 448.835 )
+
+[node name="9" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 454.294, 456.429 )
+
+[node name="10" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 339.536, 428.777 )
+
+[node name="11" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 262.502, 369.927 )
+
+[node name="Object" type="Node2D" parent="."]
+
+[node name="rock" parent="Object" instance=ExtResource( 1 )]
+position = Vector2( 200, 152 )
+
+[node name="rock2" parent="Object" instance=ExtResource( 1 )]
+position = Vector2( 752, 120 )
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Winner" type="Label" parent="."]
+visible = false
+margin_left = -2.91504
+margin_top = -0.220245
+margin_right = 1028.08
+margin_bottom = 616.78
+size_flags_horizontal = 2
+size_flags_vertical = 0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 1
+text = "THE WINNER IS:
+YOU"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitGame" type="Button" parent="Winner"]
+margin_left = 384.0
+margin_top = 408.0
+margin_right = 649.0
+margin_bottom = 469.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 1 )
+text = "EXIT GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}

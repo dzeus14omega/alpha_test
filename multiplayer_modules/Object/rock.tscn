@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://multiplayer_modules/rock_bit.png" type="Texture" id=1]
+
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21.2993, 20.3638 )
+
+[node name="rock" type="StaticBody2D"]
+position = Vector2( 228.516, 128.735 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="rock_bit" type="Sprite" parent="."]
+position = Vector2( -0.273462, 0.288376 )
+scale = Vector2( 8.39446, 7.85992 )
+texture = ExtResource( 1 )
