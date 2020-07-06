@@ -65,5 +65,13 @@ func _on_setting_pressed():
 
 
 func _on_Start_pressed():
+	var amount = int($menu_single_game/VBoxContainer/HBoxContainer/num_character.text)
+	#print(amount)
+	GLOBAL.update_total_character(amount)
 	get_tree().change_scene("res://scenes/main_scene.tscn")
+	pass # Replace with function body.
+
+
+func _on_multiplayer_pressed():
+	get_tree().change_scene("res://multiplayer_modules/scenes/lobby.tscn")
 	pass # Replace with function body.

@@ -20,12 +20,12 @@ func _ready():
 
 
 func _on_inside_body_entered(body):
-	if body is Player:
+	if body is Player or body is player_multiplayer:
 		$house_01.visible = false
 	pass # Replace with function body.
 
 
-func _on_inside_body_exited(body):
-	if body is Player:
+func _on_inside_body_exited(body) :
+	if body is Player or body is player_multiplayer:
 		$house_01.visible = true
 	pass # Replace with function body.

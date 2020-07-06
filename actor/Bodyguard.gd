@@ -15,6 +15,9 @@ func _ready():
 	state_action = State_action.go_outside
 	pass
 
+func get_class():
+	return "Bodyguard"
+
 ###------------------ Show dialog-----------------###
 #####################################################
 

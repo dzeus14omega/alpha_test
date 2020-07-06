@@ -83,6 +83,11 @@ _global_script_classes=[ {
 "class": "Witch",
 "language": "GDScript",
 "path": "res://actor/Witch.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "player_multiplayer",
+"language": "GDScript",
+"path": "res://multiplayer_modules/Object/player/player.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -99,7 +104,8 @@ _global_script_class_icons={
 "Player": "",
 "Seer": "",
 "Vote_list": "",
-"Witch": ""
+"Witch": "",
+"player_multiplayer": ""
 }
 
 [application]

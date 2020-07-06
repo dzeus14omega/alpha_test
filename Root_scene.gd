@@ -10,6 +10,11 @@ var arrest_order : String = ""
 var dead_list : Array
 var day_num
 
+func update_total_character(amount : int):
+	self.total_character = amount
+	#print(total_character)
+
+
 func check_arrest_order():
 	var tmp = arrest_order
 	return tmp

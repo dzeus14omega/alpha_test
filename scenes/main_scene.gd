@@ -94,7 +94,7 @@ func game_condition_checking():
 	if (wolf_num == 0):
 		print("human_win")
 		$Game_over.human_win()
-	if(human_num == wolf_num):
+	if(human_num <= wolf_num):
 		print("wolf_win")
 		$Game_over.wolf_win()
 		pass

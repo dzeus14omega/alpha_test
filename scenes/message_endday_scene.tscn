@@ -200,7 +200,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="message_newday/ColorRect/Sprite"]
 frames = SubResource( 15 )
 animation = "run"
-frame = 7
+frame = 2
 playing = true
 
 [node name="message" type="RichTextLabel" parent="message_newday"]

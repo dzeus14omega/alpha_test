@@ -19,9 +19,11 @@ func update_list():
 	var alive_character = GLOBAL.character_list
 	if alive_character.empty():
 		return
+		
 	for x in alive_character:
 		var new_button = Button.new()
-		new_button.set_button_icon(load("res://icon.png"))
+		var path_image = "res://img_source/" + x.get_class() + ".png"
+		new_button.set_button_icon(load(path_image))
 		new_button.set_name(x.name)
 		new_button.set_text(x.name)
 		new_button.toggle_mode = true

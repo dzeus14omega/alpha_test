@@ -113,5 +113,8 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 11 )
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Witch_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Witch_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

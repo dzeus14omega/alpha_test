@@ -21,7 +21,9 @@ func _ready():
 	timer.set_wait_time(2)
 	pass
 
-
+func get_class():
+	return "Hunter"
+	
 # warning-ignore:unused_argument
 func _process(delta):
 	animation_controller()

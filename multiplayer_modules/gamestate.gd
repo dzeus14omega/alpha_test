@@ -10,7 +10,8 @@ const MAX_PEERS = 12
 var player_name = "The Warrior"
 
 # Names for remote players in id:name format.
-var players = {}
+var players = {};
+var player_outfits = {}
 var players_ready = []
 
 # Signals to let lobby GUI know what's going on.
@@ -71,12 +72,12 @@ func unregister_player(id):
 
 remote func pre_start_game(spawn_points):
 	# Change scene.
-	var world = load("res://multiplayer_modules/world.tscn").instance()
+	var world = load("res://multiplayer_modules/scenes/world.tscn").instance()
 	get_tree().get_root().add_child(world)
 
 	get_tree().get_root().get_node("Lobby").hide()
 
-	var player_scene = load("res://multiplayer_modules/player.tscn")
+	var player_scene = load("res://multiplayer_modules/Object/player/player.tscn")
 
 	for p_id in spawn_points:
 		var spawn_pos = world.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
@@ -93,12 +94,7 @@ remote func pre_start_game(spawn_points):
 			# Otherwise set name from peer.
 			player.set_player_name(players[p_id])
 
-		world.get_node("Players").add_child(player)
-
-	# Set up score.
-#	world.get_node("Score").add_player(get_tree().get_network_unique_id(), player_name)
-#	for pn in players:
-#		world.get_node("Score").add_player(pn, players[pn])
+		world.get_node("Object").get_node("Players").add_child(player)
 
 	if not get_tree().is_network_server():
 		# Tell server we are ready to start.

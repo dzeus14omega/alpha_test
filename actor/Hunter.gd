@@ -17,6 +17,8 @@ func _ready():
 	state_action = State_action.go_outside
 	pass
 
+func get_class():
+	return "Hunter"
 ###------------------ Show dialog-----------------###
 #####################################################
 
@@ -101,7 +103,7 @@ func _on_hunter_body_exited(body):
 func update_dialogue()-> String:
 	if (current_dialogues.size() == 0):
 		return ""
-	var i = randi() % (current_dialogues.size() - 1)
+	var i = randi() % (current_dialogues.size())-1
 	var result = current_dialogues[i]
 	return result
 

@@ -45,10 +45,13 @@ position = Vector2( 504, -344 )
 position = Vector2( -664, -208 )
 
 [node name="house6" parent="Object/House" instance=ExtResource( 7 )]
-position = Vector2( -16, 240 )
+position = Vector2( -48, 232 )
 
 [node name="house7" parent="Object/House" instance=ExtResource( 7 )]
 position = Vector2( 328, -576 )
+
+[node name="house8" parent="Object/House" instance=ExtResource( 7 )]
+position = Vector2( -402.343, 232 )
 
 [node name="Characters" type="YSort" parent="Object"]
 script = ExtResource( 2 )
@@ -58,7 +61,7 @@ position = Vector2( 280, -216 )
 spawn_location = Vector2( 280, -216 )
 
 [node name="Hunter" parent="Object/Characters" instance=ExtResource( 4 )]
-position = Vector2( 96, -216 )
+position = Vector2( 91.9955, -206.656 )
 spawn_location = Vector2( 96, -216 )
 
 [node name="Seer" parent="Object/Characters" instance=ExtResource( 10 )]
@@ -92,7 +95,7 @@ bias = Vector2( -24, -24 )
 [node name="dialogue_controller" parent="Object/Characters" instance=ExtResource( 9 )]
 
 [node name="Player" parent="Object" instance=ExtResource( 6 )]
-position = Vector2( 352, -520 )
+position = Vector2( -156.249, -475.279 )
 
 [node name="splash_scene_endday" parent="." instance=ExtResource( 14 )]
 

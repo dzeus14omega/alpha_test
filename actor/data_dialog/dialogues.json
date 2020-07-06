@@ -290,9 +290,9 @@
         "enu": ""
     },
     "59": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Hunter2",
+        "dialog": "hello my friend!",
+        "enu": "norm"
     },
     "60": {
         "role": "",
