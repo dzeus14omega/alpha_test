@@ -87,14 +87,27 @@ func refresh_lobby():
 
 
 func _on_start_pressed():
-#	var list_button = $Players/GridContainer.get_children()
-#	var outfit
-#	for x in list_button:
-#		if (x.pressed):
-#			outfit = x.text
-#			break
 	gamestate.begin_game()
 
+
+func get_outfit():
+	var list_button = $Players/GridContainer.get_children()
+	var outfit
+	for x in list_button:
+		if (x.pressed):
+			outfit = x.text
+			break
+	if (outfit == "RANDOM"):
+		list_button.pop_back()
+		randomize()
+		var tmp = randi() % (list_button.size()-1)
+		for x in list_button:
+			if(tmp <= 0):
+				outfit = x.text
+				break
+			tmp -= 1
+	
+	return outfit
 
 func _on_TouchScreenButton_pressed():
 	get_tree().change_scene("res://scenes/menu_scene.tscn")

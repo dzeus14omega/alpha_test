@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 # Default game port. Can be any number between 1024 and 49151.
 const DEFAULT_PORT = 10567
@@ -11,8 +11,26 @@ var player_name = "The Warrior"
 
 # Names for remote players in id:name format.
 var players = {};
-var player_outfits = {}
 var players_ready = []
+var player_outfits = {}
+
+#get selected outfit from lobby
+func get_current_outfit():
+	return get_tree().get_root().get_node("Lobby").get_outfit()
+
+#get outfit from peer
+remote func request_outfit(p):
+	rpc_id(1, "add_outfit", get_current_outfit(),p)
+	return get_current_outfit()
+
+# return outfit for server
+remote func add_outfit(outfit, peer):
+	if get_tree().is_network_server():
+		player_outfits[peer] = outfit
+		#print(player_outfits)
+	emit_signal("outfit_added")
+	pass
+
 
 # Signals to let lobby GUI know what's going on.
 signal player_list_changed()
@@ -20,6 +38,7 @@ signal connection_failed()
 signal connection_succeeded()
 signal game_ended()
 signal game_error(what)
+signal outfit_added()
 
 # Callback from SceneTree.
 func _player_connected(id):
@@ -70,7 +89,8 @@ func unregister_player(id):
 	emit_signal("player_list_changed")
 
 
-remote func pre_start_game(spawn_points):
+remote func pre_start_game(spawn_points, player_outfits):
+	#print(player_outfits)
 	# Change scene.
 	var world = load("res://multiplayer_modules/scenes/world.tscn").instance()
 	get_tree().get_root().add_child(world)
@@ -82,9 +102,10 @@ remote func pre_start_game(spawn_points):
 	for p_id in spawn_points:
 		var spawn_pos = world.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
 		var player = player_scene.instance()
-
+		
 		player.set_name(str(p_id)) # Use unique ID as node name.
 		player.position=spawn_pos
+		player.set_outfit(player_outfits[p_id])
 		player.set_network_master(p_id) #set unique id as master.
 
 		if p_id == get_tree().get_network_unique_id():
@@ -144,18 +165,24 @@ func get_player_name():
 func begin_game():
 	assert(get_tree().is_network_server())
 
-	# Create a dictionary with peer id and respective spawn points, could be improved by randomizing.
+	# Create a dictionary with peer id, respective spawn points and player_outfit, could be improved by randomizing.
 	var spawn_points = {}
+	
 	spawn_points[1] = 0 # Server in spawn point 0.
+	player_outfits[1] = get_current_outfit()
+	
 	var spawn_point_idx = 1
 	for p in players:
 		spawn_points[p] = spawn_point_idx
+		player_outfits[p] = rpc_id(p, "request_outfit", p)
+		yield(self,"outfit_added")
 		spawn_point_idx += 1
+		
 	# Call to pre-start game with the spawn points.
 	for p in players:
-		rpc_id(p, "pre_start_game", spawn_points)
-
-	pre_start_game(spawn_points)
+		rpc_id(p, "pre_start_game", spawn_points, player_outfits)
+		
+	pre_start_game(spawn_points, player_outfits)
 
 
 func end_game():

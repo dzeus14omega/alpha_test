@@ -101,7 +101,7 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Players/GridContainer"]
-margin_right = 151.0
+margin_right = 148.0
 margin_bottom = 82.0
 toggle_mode = true
 group = ExtResource( 7 )
@@ -109,8 +109,8 @@ text = "Knight"
 icon = ExtResource( 6 )
 
 [node name="Button2" type="Button" parent="Players/GridContainer"]
-margin_left = 155.0
-margin_right = 277.0
+margin_left = 152.0
+margin_right = 274.0
 margin_bottom = 82.0
 toggle_mode = true
 group = ExtResource( 7 )
@@ -118,8 +118,8 @@ text = "Hunter"
 icon = ExtResource( 11 )
 
 [node name="Button3" type="Button" parent="Players/GridContainer"]
-margin_left = 281.0
-margin_right = 426.0
+margin_left = 278.0
+margin_right = 423.0
 margin_bottom = 82.0
 toggle_mode = true
 group = ExtResource( 7 )
@@ -128,17 +128,17 @@ icon = ExtResource( 9 )
 
 [node name="Button4" type="Button" parent="Players/GridContainer"]
 margin_top = 86.0
-margin_right = 151.0
+margin_right = 148.0
 margin_bottom = 168.0
 toggle_mode = true
 group = ExtResource( 7 )
-text = "Old villager"
+text = "OldVillager"
 icon = ExtResource( 12 )
 
 [node name="Button5" type="Button" parent="Players/GridContainer"]
-margin_left = 155.0
+margin_left = 152.0
 margin_top = 86.0
-margin_right = 277.0
+margin_right = 274.0
 margin_bottom = 168.0
 toggle_mode = true
 group = ExtResource( 7 )
@@ -146,9 +146,9 @@ text = "Seer"
 icon = ExtResource( 8 )
 
 [node name="Button6" type="Button" parent="Players/GridContainer"]
-margin_left = 281.0
+margin_left = 278.0
 margin_top = 86.0
-margin_right = 426.0
+margin_right = 423.0
 margin_bottom = 168.0
 toggle_mode = true
 group = ExtResource( 7 )
@@ -157,7 +157,7 @@ icon = ExtResource( 10 )
 
 [node name="Button7" type="Button" parent="Players/GridContainer"]
 margin_top = 172.0
-margin_right = 151.0
+margin_right = 148.0
 margin_bottom = 242.0
 toggle_mode = true
 pressed = true

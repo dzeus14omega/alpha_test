@@ -11,20 +11,20 @@ puppet var puppet_motion = Vector2()
 var current_anim = ""
 var prev_bombing = false
 var bomb_index = 0
-var outFit
+var outFit 
 
 
 func _physics_process(_delta):
 	var motion = _move(_delta)
 
 	if motion.x < 0:
-		$AnimatedSprite.play("move_left")
-		$AnimatedSprite.flip_h = false
+		outFit.play("move_left")
+		outFit.flip_h = false
 	if motion.x > 0:
-		$AnimatedSprite.play("move_left")
-		$AnimatedSprite.flip_h = true
+		outFit.play("move_left")
+		outFit.flip_h = true
 	if motion.x == 0 and motion.y == 0:
-		$AnimatedSprite.play("idle")
+		outFit.play("idle")
 		
 		
 	# FIXME: Use move_and_slide
@@ -48,7 +48,12 @@ func _move(delta: float) -> Vector2:
 func set_player_name(new_name):
 	$label.set_text(new_name)
 
-
+func set_outfit(outfit):
+	var path = "res://multiplayer_modules/Object/outfit/" + outfit + "_style.tscn"
+	print(path)
+	self.outFit = load(path).instance()
+	add_child(outFit)
+	pass
 
 func _ready():
 #	stunned = false

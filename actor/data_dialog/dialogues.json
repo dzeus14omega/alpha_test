@@ -220,44 +220,44 @@
         "enu": ""
     },
     "45": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Hunter_green",
+        "dialog": "Seriously!,... Iam not a wolf",
+        "enu": "norm"
     },
     "46": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Hunter_green",
+        "dialog": "Go away, i'm busy",
+        "enu": "norm"
     },
     "47": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Hunter_green",
+        "dialog": "I just a normal person and don't have any special ability",
+        "enu": "norm"
     },
     "48": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Seer_blue",
+        "dialog": "I wish i can tell you what happen next",
+        "enu": "norm"
     },
     "49": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Seer_blue",
+        "dialog": "Maybe Iam a wolf",
+        "enu": "norm"
     },
     "50": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Witch_yellow",
+        "dialog": "How about a little toxin?",
+        "enu": "norm"
     },
     "51": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Bodyguard_red",
+        "dialog": "Hello, how are you ?",
+        "enu": "norm"
     },
     "52": {
-        "role": "",
-        "dialog": "",
-        "enu": ""
+        "role": "Bodyguard_red",
+        "dialog": "Hahaha",
+        "enu": "norm"
     },
     "53": {
         "role": "",
@@ -290,9 +290,9 @@
         "enu": ""
     },
     "59": {
-        "role": "Hunter2",
-        "dialog": "hello my friend!",
-        "enu": "norm"
+        "role": "",
+        "dialog": "",
+        "enu": ""
     },
     "60": {
         "role": "",
