@@ -118,6 +118,7 @@ config/icon="res://icon.png"
 
 GLOBAL="*res://Root_scene.gd"
 gamestate="*res://multiplayer_modules/gamestate.gd"
+LoadingScene="*res://scenes/Loading_scene.tscn"
 
 [display]
 

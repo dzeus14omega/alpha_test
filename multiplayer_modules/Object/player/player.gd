@@ -1,7 +1,6 @@
 extends KinematicBody2D
 class_name player_multiplayer
 
-const MOTION_SPEED = 90.0
 
 var joystick_move
 var speed = 150
@@ -9,9 +8,11 @@ var ui = preload("res://multiplayer_modules/UI/UI.tscn")
 puppet var puppet_pos = Vector2()
 puppet var puppet_motion = Vector2()
 var current_anim = ""
-var prev_bombing = false
-var bomb_index = 0
+
 var outFit 
+var role = "human"
+var vote = 0
+
 
 
 func _physics_process(_delta):
